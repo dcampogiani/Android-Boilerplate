@@ -15,7 +15,7 @@ internal abstract class MainModule {
     @Binds
     @IntoMap
     @ViewModelKey(MainViewModel::class)
-    internal abstract fun bindProductDetailsViewModel(viewModel: MainViewModel): ViewModel
+    internal abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
 
     @Binds
     internal abstract fun bindMainService(serviceImpl: MainServiceImpl): MainService
