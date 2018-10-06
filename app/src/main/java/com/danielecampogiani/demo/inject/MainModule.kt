@@ -1,6 +1,6 @@
 package com.danielecampogiani.demo.inject
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.danielecampogiani.demo.main.MainService
 import com.danielecampogiani.demo.main.MainServiceImpl
 import com.danielecampogiani.demo.main.MainViewModel
