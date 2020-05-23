@@ -1,6 +1,5 @@
 package com.danielecampogiani.demo.main
 
-
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +12,6 @@ import com.danielecampogiani.demo.DemoApplication
 import com.danielecampogiani.demo.R
 import kotlinx.android.synthetic.main.fragment_main.*
 import javax.inject.Inject
-
 
 class MainFragment : androidx.fragment.app.Fragment() {
 
@@ -35,18 +33,16 @@ class MainFragment : androidx.fragment.app.Fragment() {
         super.onAttach(context)
     }
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val viewModel = ViewModelProviders.of(this, viewModelFactory)[MainViewModel::class.java]
 
-        viewModel.liveData.observe(this, Observer {
+        viewModel.liveData.observe(viewLifecycleOwner, Observer {
             text_view.text = it
         })
     }
